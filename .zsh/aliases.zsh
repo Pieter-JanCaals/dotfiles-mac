@@ -21,5 +21,6 @@ alias arinti="cd /mnt/c/users/caalspi/arinti"
 # Edit & Source zsh configurations
 alias editaliases="vim ~/.zsh/aliases.zsh"
 alias editzsh="vim ~/.zshrc"
+alias codezsh="code ~/.zsh/"
 alias sourcezsh="source ~/.zshrc"
 alias editstarship="code ~/.config/starship.toml"
