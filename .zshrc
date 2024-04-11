@@ -17,3 +17,8 @@ export NVM_DIR="/home/caalspi/.nvm"
 
 # Load Starship
 eval "$(starship init zsh)"
+
+# Load zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

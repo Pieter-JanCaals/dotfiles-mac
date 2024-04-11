@@ -23,3 +23,36 @@ keep_current_path() {
   printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
 }
 precmd_functions+=(keep_current_path)
+
+function clip() {
+  pwsh.exe -Command '$input | Set-Clipboard'
+}
+
+function ntfy() {
+  local title=""  
+  local priority="" 
+  local tags="" 
+
+  for arg in "$@"; do  
+      case $arg in  
+          --title=*)  
+              title="${arg#*=}"  
+              ;;  
+          --priority=*)  
+              priority="${arg#*=}"  
+              ;;  
+          --tags=*)  
+              tags="${arg#*=}"  
+              ;;  
+          *)   
+      esac  
+  done  
+
+  if [ -z "$1" ] || [[ "$1" == "--"* ]]; then  
+      read input  
+  else
+      input=$1
+  fi
+    
+  curl -d "$input" -H "Title: $title" -H "Priority: $priority" -H "Tags: $tags" ntfy.sh/XythpdrtazYNem8ot > /dev/null 2>&1
+}

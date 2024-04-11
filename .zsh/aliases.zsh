@@ -5,8 +5,8 @@ alias tr="terraform"
 
 # Windows applications
 alias winstart="cmd.exe /C start"
-alias clip="clip.exe"
-alias psh="powershell.exe"
+# alias clip="clip.exe"
+alias psh="pwsh.exe"
 alias ngrok="clear && psh ngrok.exe"
 
 # List directory info
