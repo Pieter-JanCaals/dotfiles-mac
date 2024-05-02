@@ -24,9 +24,9 @@ keep_current_path() {
 }
 precmd_functions+=(keep_current_path)
 
-function clip() {
-  pwsh.exe -Command '$input | Set-Clipboard'
-}
+# function clip() {
+#   pwsh.exe -Command '$input | Set-Clipboard'
+# }
 
 function ntfy() {
   local title=""  
